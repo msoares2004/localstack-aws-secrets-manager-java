@@ -1,13 +1,22 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-	"name": "Ubunto-22.04 with Java",
+	"name": "Ubunto-22.04/Java 23 Corretto",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"dockerComposeFile": "docker-compose.yml",
     "service": "app",
     "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"features": {
-		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+		// "ghcr.io/ebaskoro/devcontainer-features/sdkman:1": {
+        //     "candidate": "java",
+        //     "version": "21.0.5-amzn"
+        // },
+		"ghcr.io/devcontainers-extra/features/maven-sdkman:2": {
+			"version": "3.9.9",
+			"jdkDistro": "amzn",
+			"jdkVersion": "23"
+		}
 	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
